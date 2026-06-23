@@ -1,0 +1,26 @@
+# Last updated: 2026-06-24
+
+User-agent: *
+
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /blog
+Allow: /contact
+Allow: /products
+Allow: /portfolio
+Allow: /privacy-policy
+Allow: /terms
+
+# Block sensitive or admin areas (uncomment and edit as needed)
+# Disallow: /admin/
+# Disallow: /login/
+# Disallow: /dashboard/
+# Disallow: /wp-admin/
+# Disallow: /cgi-bin/
+
+# Sitemap
+Sitemap: https://example.com/sitemap.xml
+
+# Crawl delay (optional - 1 second between requests)
+# Crawl-delay: 1User-agent: *
