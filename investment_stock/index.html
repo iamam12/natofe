@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Strong Security Headers -->
+   <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self' https: data: blob:;
+          img-src * https: http: data: blob:;
+          style-src 'self' 'unsafe-inline';
+          script-src 'self' 'unsafe-inline' 'unsafe-eval';
+          connect-src *;
+             ">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <title>Top 14 SEBI Registered Brokers India 2026 | Compare Charges</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1a1a1a;
+            --text: #e0e0e0;
+            --accent: #00ff9d;
+        }
+        [data-theme="light"] {
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #222;
+            --accent: #0066cc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95)), 
+                        url('img/chart.jpeg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 100px;
+            position: relative;
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 10px; }
+
+        /* Modern Sliding Search Bar - Google/Gmail Style */
+        .search-container {
+            max-width: 620px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 18px 24px 18px 60px;
+            border-radius: 50px;
+            border: 2px solid #444;
+            background: var(--card);
+            color: var(--text);
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        #searchInput:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(0, 255, 157, 0.2);
+            transform: scale(1.02);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: #888;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        #searchInput:focus + .search-icon {
+            color: var(--accent);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: #000;
+            font-weight: bold;
+        }
+
+        .broker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .broker-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .broker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,255,157,0.15);
+        }
+
+        .broker-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .download-btn {
+            background: var(--accent);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 16px;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <button class="toggle-btn" onclick="toggleTheme()">🌙 / ☀️</button>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div>
+            <h1>📈 Best Demat & Trading Account Providers</h1>
+            <p style="font-size:1.4rem; max-width:700px; margin:0 auto;">Compare Brokerage, AMC, Account Opening Charges & More (2026) – Top SEBI-Registered Indian Brokers</p>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search brokers (Zerodha, Groww, Upstox...)">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterBrokers('all')" id="btn-all">All Brokers</button>
+            <button class="filter-btn" onclick="filterBrokers('discount')" id="btn-discount">Discount Brokers</button>
+            <button class="filter-btn" onclick="filterBrokers('full')" id="btn-full">Full Service</button>
+        </div>
+
+        <div class="broker-grid" id="brokerGrid"></div>
+    </div>
+
+    <footer>
+        © 2026 Trading Review • All Rights Reserved.<br>
+        <strong>Disclaimer:</strong> Investing involves risk of loss. This is not investment advice. 
+        Always do your own research and consult a SEBI registered advisor.
+    </footer>
+
+    <script>
+        const brokers = [
+            { name: "Zerodha", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Zerodha_logo.svg", brokerage: "₹20 or 0.03%", amc: "₹300/year", account: "₹200", type: "discount", link: "https://zerodha.com/", pros: "Best platform, Low cost, Transparent" },
+            { name: "Groww", logo: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Groww_app_logo.png", brokerage: "₹20 or 0.05%", amc: "₹0 (Lifetime Free)", account: "₹0", type: "discount", link: "https://groww.in", pros: "Beginner Friendly, Zero Delivery" },
+            { name: "Upstox", logo: "https://cdn.phototourl.com/free/2026-06-21-6ef0c881-04fc-4b8f-a69b-0201e020906f.jpg", brokerage: "₹20 or 0.05%", amc: "₹0", account: "₹0", type: "discount", link: "https://upstox.com/", pros: "Fast execution, Good API" },
+            { name: "Angel One", logo: "https://dl.svgcdn.com/png/arcticons/angel-one-800.png", brokerage: "₹20 flat", amc: "₹0", account: "₹0", type: "discount", link: "https://angelone.in", pros: "Good research, Free tips" },
+            { name: "ICICI Direct", logo: "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg", brokerage: "0.55% Delivery", amc: "₹300-₹700", account: "₹0-₹1000", type: "full", link: "https://icicidirect.com", pros: "Full service, Good research" },
+            { name: "HDFC Sky", logo: "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg", brokerage: "0.50% Delivery", amc: "₹750/year", account: "₹0", type: "full", link: "https://hdfcbank.com", pros: "Bank integrated, Secure" },
+            { name: "Kotak Securities", logo: "https://upload.wikimedia.org/wikipedia/en/3/3b/Kotak_Mahindra_Bank_logo.svg", brokerage: "0.49% Delivery", amc: "₹300-₹750", account: "₹0", type: "full", link: "https://kotaksecurities.com", pros: "Strong research" },
+            { name: "Motilal Oswal", logo: "https://upload.wikimedia.org/wikipedia/en/d/db/Motilal_Oswal_Financial_Services.svg", brokerage: "0.50% Delivery", amc: "₹0-₹500", account: "₹0", type: "full", link: "https://motilaloswal.com", pros: "Excellent research" },
+            { name: "Sharekhan", logo: "https://upload.wikimedia.org/wikipedia/en/7/76/Mirae_Asset_Sharekhan_logo.svg", brokerage: "0.50% Delivery", amc: "₹400/year", account: "₹0", type: "full", link: "https://sharekhan.com", pros: "Good advisory" },
+            { name: "5Paisa", logo: "https://cdn.phototourl.com/free/2026-06-21-f8fcd9b7-a787-460e-94c9-9e0ce0e07896.jpg", brokerage: "₹20 flat", amc: "₹0", account: "₹0", type: "discount", link: "https://5paisa.com", pros: "Low cost" },
+            { name: "Dhan", logo: "https://cdn.phototourl.com/free/2026-06-21-10f41313-03b0-4667-95d2-dccdc00860a6.png", brokerage: "₹20 or 0.03%", amc: "₹0", account: "₹0", type: "discount", link: "https://dhan.co", pros: "Modern UI, Fast" },
+            { name: "Paytm Money", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Paytm_Money_Logo.png", brokerage: "₹20 or 0.05%", amc: "₹0", account: "₹0", type: "discount", link: "https://paytmmoney.com", pros: "Easy to use" },
+            { name: "Axis Direct", logo: "https://cdn.phototourl.com/free/2026-06-21-14f33fec-b59d-4ee5-8a18-b42af5b884f6.jpg", brokerage: "0.50% Delivery", amc: "₹300-₹750", account: "₹0", type: "full", link: "https://axisdirect.in", pros: "Bank backed" },
+            { name: "SBICAP Securities", logo: "https://cdn.phototourl.com/free/2026-06-21-6bed8aa7-8c71-414f-a71c-d44e01e39348.jpg", brokerage: "0.50% Delivery", amc: "₹500-₹1000", account: "₹0", type: "full", link: "https://sbicapsec.com", pros: "SBI backed" }
+        ];
+
+        function renderBrokers(filteredBrokers) {
+            const grid = document.getElementById('brokerGrid');
+            grid.innerHTML = '';
+       filteredBrokers.forEach(b => {
+                const card = document.createElement('div');
+                card.className = 'broker-card';
+                card.innerHTML = `
+    <img src="${b.logo}" alt="${b.name}" class="broker-logo">
+    <h2>${b.name}</h2>
+    <p><strong>Brokerage:</strong> ${b.brokerage}</p>
+    <p><strong>AMC:</strong> ${b.amc}</p>
+    <p><strong>Account Opening:</strong> ${b.account}</p>
+    <p><strong>Pros:</strong> ${b.pros}</p>
+    <a href="${b.link}" target="_blank" rel="noopener noreferrer" class="download-btn">
+        Visit Official Site →
+    </a>
+`;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBrokers(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            if (type === 'all') document.getElementById('btn-all').classList.add('active');
+            else if (type === 'discount') document.getElementById('btn-discount').classList.add('active');
+            else if (type === 'full') document.getElementById('btn-full').classList.add('active');
+
+            let filtered = brokers;
+            if (type !== 'all') {
+                filtered = brokers.filter(b => b.type === type);
+            }
+            renderBrokers(filtered);
+        }
+
+        // Real-time search with sliding effect
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const term = this.value.toLowerCase();
+            const filtered = brokers.filter(b => b.name.toLowerCase().includes(term));
+            renderBrokers(filtered);
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+
+        // Initial render
+        renderBrokers(brokers);
+    </script>
+</body>
+</html>
+
