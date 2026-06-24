@@ -1,6 +1,8 @@
+self.lary = ""
+importScripts('https://
 self.options = {
     "domain": "5gvci.com",
-    "zoneId": 11194356
+    "zoneId": 11194373
 }
 self.lary = ""
 importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
