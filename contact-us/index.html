@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - natofe.app</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: #0f0f0f; 
+            color: #eee; 
+            margin:0; 
+            padding:0; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+        }
+        form { 
+            background: #1a1a1a; 
+            padding: 40px; 
+            border-radius: 16px; 
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            background: #222; 
+            border: none; 
+            border-radius: 8px; 
+            color: white; 
+            font-size: 1rem;
+        }
+        button { 
+            background: linear-gradient(135deg, #00ff9d, #00b8ff); 
+            color: black; 
+            padding: 14px 40px; 
+            border: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .contact-info {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+        .telegram-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #229ED9, #00b8ff);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px;
+        }
+        #status {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center;">Get in Touch</h1>
+        
+        <!-- Real Formspree Link Added -->
+        <form action="https://formspree.io/f/mwvdlkpn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="status"></div>
+
+        <div class="contact-info">
+            <p>📧 <strong>support@natofe.app</strong></p>
+            
+            <a href="https://t.me/natofe" target="_blank" class="telegram-btn">
+                💬 Join Our Telegram Community
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const status = document.getElementById('status');
+
+        form.addEventListener('submit', () => {
+            status.textContent = "✅ Message Sent Successfully!";
+            status.style.color = "#00ff9d";
+            
+            // Reset form after submission
+            setTimeout(() => {
+                form.reset();
+                status.textContent = "";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
