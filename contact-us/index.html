@@ -43,9 +43,6 @@
             font-size: 1.1rem;
             width: 100%;
         }
-        button:hover {
-            opacity: 0.9;
-        }
         .contact-info {
             text-align: center;
             margin: 40px 0;
@@ -72,12 +69,15 @@
     <div class="container">
         <h1 style="text-align:center;">Get in Touch</h1>
         
-        <!-- Real Formspree Link Added -->
-        <form action="https://formspree.io/f/mwvdlkpn" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <form action="https://formspree.io/f/mwvdlkpn" method="POST" id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required maxlength="100">
+            <input type="email" name="email" placeholder="Your Email" required maxlength="100">
+            <input type="text" name="subject" placeholder="Subject" required maxlength="150">
+            <textarea name="message" rows="6" placeholder="Your Message" required maxlength="2000"></textarea>
+            
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
+            
             <button type="submit">Send Message</button>
         </form>
 
@@ -85,7 +85,6 @@
 
         <div class="contact-info">
             <p>📧 <strong>support@natofe.app</strong></p>
-            
             <a href="https://t.me/natofe" target="_blank" class="telegram-btn">
                 💬 Join Our Telegram Community
             </a>
@@ -93,18 +92,27 @@
     </div>
 
     <script>
-        const form = document.querySelector('form');
+        const form = document.getElementById('contactForm');
         const status = document.getElementById('status');
 
-        form.addEventListener('submit', () => {
-            status.textContent = "✅ Message Sent Successfully!";
-            status.style.color = "#00ff9d";
+        form.addEventListener('submit', (e) => {
+            const honeypot = form.querySelector('input[name="honeypot"]').value;
             
-            // Reset form after submission
-            setTimeout(() => {
-                form.reset();
-                status.textContent = "";
-            }, 3000);
+            if (honeypot !== "") {
+                e.preventDefault();
+                return;
+            }
+
+            status.textContent = "Sending...";
+            status.style.color = "#00ff9d";
+        });
+
+        // Formspree will redirect after success, but we can show message before
+        window.addEventListener('load', () => {
+            if (window.location.search.includes('success')) {
+                status.textContent = "✅ Message Sent Successfully! Thank you.";
+                status.style.color = "#00ff9d";
+            }
         });
     </script>
 </body>
