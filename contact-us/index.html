@@ -67,7 +67,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align:center;">Get in Touch</h1>
+        <h1 style="text-align:center;">Contact Us</h1>
         
         <form action="https://formsubmit.co/rupmahanta100@gmail.com" method="POST" id="contactForm">
             <input type="text" name="name" placeholder="Your Name" required maxlength="100">
@@ -78,11 +78,12 @@
             <!-- Honeypot for spam protection -->
             <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
             
-            <!-- Formsubmit.co settings -->
-            <input type="hidden" name="_next" value="https://natofee.netlify.app/contect-us/index.html?success=true">
+            <!-- FormSubmit Secure Settings -->
+            <input type="hidden" name="_next" value="https://natofee.netlify.app/contact-us//index.html?success=true">
             <input type="hidden" name="_subject" value="New Contact Form Submission">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We will reply soon.">
+            <input type="hidden" name="_replyto" value="{{email}}">
+            <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We have received your message and will reply as soon as possible.">
             
             <button type="submit">Send Message</button>
         </form>
