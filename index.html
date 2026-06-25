@@ -358,91 +358,100 @@
 </div>
 
 <script>
-    // DOM Elements
-    const searchInput = document.getElementById('searchInput');
-    const categoriesContainer = document.getElementById('categoriesContainer');
-    const noResults = document.getElementById('noResults');
-    const loadingOverlay = document.getElementById('loadingOverlay');
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const noResults = document.getElementById('noResults');
+        const loadingOverlay = document.getElementById('loadingOverlay');
 
-    // Sanitize input
-    function sanitizeInput(str) {
-        if (!str) return '';
-        return str
-            .replace(/<[^>]*>/g, '')
-            .replace(/javascript:|on\w+=/gi, '')
-            .replace(/[<>&"']/g, '')
-            .trim()
-            .toLowerCase()
-            .substring(0, 100);
-    }
+        // Sanitize input
+        function sanitizeInput(str) {
+            if (!str) return '';
+            return str
+                .replace(/<[^>]*>/g, '')
+                .replace(/javascript:|on\w+=/gi, '')
+                .replace(/[<>&"']/g, '')
+                .trim()
+                .toLowerCase()
+                .substring(0, 100);
+        }
 
-    // Search functionality
-    function handleSearch() {
-        const term = sanitizeInput(searchInput.value);
-        const categories = document.querySelectorAll('.category');
-        let hasMatch = false;
+        // Search functionality
+        function handleSearch() {
+            const term = sanitizeInput(searchInput.value);
+            const categories = document.querySelectorAll('.category');
+            let hasMatch = false;
 
-        categories.forEach(cat => {
-            const text = cat.textContent.toLowerCase();
-            if (text.includes(term)) {
-                cat.style.display = 'flex';
-                hasMatch = true;
+            categories.forEach(cat => {
+                const text = cat.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    cat.style.display = 'flex';
+                    hasMatch = true;
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = (hasMatch || term === '') ? 'none' : 'block';
+        }
+
+        searchInput.addEventListener('input', handleSearch);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '/' && document.activeElement.tagName !== "INPUT") {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                handleSearch();
+            }
+        });
+
+        // Section navigation
+        function showSection(section) {
+            if (section !== 'home') {
+                loadingOverlay.style.display = 'flex';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 420);
+            }
+
+            // Hide all sections
+            document.querySelectorAll('section, #home-section').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            if (section === 'home') {
+                document.getElementById('home-section').style.display = 'block';
             } else {
-                cat.style.display = 'none';
+                const targetSection = document.getElementById(section + '-section');
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
             }
-        });
-
-        noResults.style.display = (hasMatch || term === '') ? 'none' : 'block';
-    }
-
-    searchInput.addEventListener('input', handleSearch);
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        if (e.key === '/' && document.activeElement.tagName !== "INPUT") {
-            e.preventDefault();
-            searchInput.focus();
-        }
-    });
-
-    searchInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            this.value = '';
-            handleSearch();
-        }
-    });
-
-    // Section navigation
-    function showSection(section) {
-        if (section !== 'home') {
-            loadingOverlay.style.display = 'flex';
-            setTimeout(() => {
-                loadingOverlay.style.display = 'none';
-            }, 420);
         }
 
-        // Hide all sections
-        document.querySelectorAll('section, #home-section').forEach(el => {
-            el.style.display = 'none';
-        });
-
-        if (section === 'home') {
+        // Initialize
+        function init() {
             document.getElementById('home-section').style.display = 'block';
-        } else {
-            const targetSection = document.getElementById(section + '-section');
-            if (targetSection) {
-                targetSection.style.display = 'block';
-            }
+            console.log('%c nato fe.app initialized successfully', 'color: #00ff9d; font-weight: bold;');
         }
-    }
 
-    // Initialize
-    function init() {
-        document.getElementById('home-section').style.display = 'block';
-        console.log('%c nato fe.app initialized successfully', 'color: #00ff9d; font-weight: bold;');
-    }
+        window.onload = init;
+    </script>
 
-    window.onload = init;
-</script>
+    <!-- ACLib scripts added exactly as provided (no changes) -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <script type="text/javascript">
+        aclib.runAutoTag({
+            zoneId: 'saa1kbdtsu',
+        });
+    </script>
 </body>
 </html> 
