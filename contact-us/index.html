@@ -43,6 +43,9 @@
             font-size: 1.1rem;
             width: 100%;
         }
+        button:hover {
+            opacity: 0.9;
+        }
         .contact-info {
             text-align: center;
             margin: 40px 0;
@@ -69,22 +72,12 @@
     <div class="container">
         <h1 style="text-align:center;">Contact Us</h1>
         
-        <form action="https://formsubmit.co/rupmahanta100@gmail.com" method="POST" id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required maxlength="100">
-            <input type="email" name="email" placeholder="Your Email" required maxlength="100">
-            <input type="text" name="subject" placeholder="Subject" required maxlength="150">
-            <textarea name="message" rows="6" placeholder="Your Message" required maxlength="2000"></textarea>
-            
-            <!-- Honeypot for spam protection -->
-            <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
-            
-            <!-- FormSubmit Secure Settings -->
-            <input type="hidden" name="_next" value="https://natofee.netlify.app/contact-us//index.html?success=true">
-            <input type="hidden" name="_subject" value="New Contact Form Submission">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_replyto" value="{{email}}">
-            <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We have received your message and will reply as soon as possible.">
-            
+        <!-- Real Formspree Link Added -->
+        <form action="https://formspree.io/f/mwvdlkpn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
 
@@ -92,32 +85,26 @@
 
         <div class="contact-info">
             <p>📧 <strong>support@natofee.app</strong></p>
-            <a href="https://t.me/natofee" target="_blank" class="telegram-btn">
+            
+            <a href="https://t.me/natofe" target="_blank" class="telegram-btn">
                 💬 Join Our Telegram Community
             </a>
         </div>
     </div>
 
     <script>
-        const form = document.getElementById('contactForm');
+        const form = document.querySelector('form');
         const status = document.getElementById('status');
 
         form.addEventListener('submit', () => {
-            status.textContent = "Sending...";
+            status.textContent = "✅ Message Sent Successfully!";
             status.style.color = "#00ff9d";
-        });
-
-        // Success message
-        window.addEventListener('load', () => {
-            if (window.location.search.includes('success=true')) {
-                status.innerHTML = `
-                    <div style="background:#1a1a1a; padding:25px; border-radius:12px; border:2px solid #00ff9d; max-width:600px; margin:20px auto;">
-                        ✅ <strong>Thank You!</strong><br><br>
-                        Your message has been sent successfully.<br>
-                        We will reply to you as soon as possible.
-                    </div>
-                `;
-            }
+            
+            // Reset form after submission
+            setTimeout(() => {
+                form.reset();
+                status.textContent = "";
+            }, 3000);
         });
     </script>
 </body>
