@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - natofe.app</title>
+    <title>Contact Us - natofee.app</title>
     <style>
         body { 
             font-family: 'Segoe UI', sans-serif; 
@@ -84,8 +84,8 @@
         <div id="status"></div>
 
         <div class="contact-info">
-            <p>📧 <strong>support@natofe.app</strong></p>
-            <a href="https://t.me/natofe" target="_blank" class="telegram-btn">
+            <p>📧 <strong>support@natofee.app</strong></p>
+            <a href="https://t.me/natofee" target="_blank" class="telegram-btn">
                 💬 Join Our Telegram Community
             </a>
         </div>
@@ -107,11 +107,16 @@
             status.style.color = "#00ff9d";
         });
 
-        // Formspree will redirect after success, but we can show message before
+        // Thank you message without any reference link
         window.addEventListener('load', () => {
             if (window.location.search.includes('success')) {
-                status.textContent = "✅ Message Sent Successfully! Thank you.";
-                status.style.color = "#00ff9d";
+                status.innerHTML = `
+                    <div style="background:#1a1a1a; padding:25px; border-radius:12px; border:2px solid #00ff9d; max-width:600px; margin:20px auto;">
+                        ✅ <strong>Thank You!</strong><br><br>
+                        Your message has been sent successfully.<br>
+                        We will reply to you as soon as possible.
+                    </div>
+                `;
             }
         });
     </script>
