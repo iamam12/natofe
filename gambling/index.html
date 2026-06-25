@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 script-src 'self' 'unsafe-inline';
+                 style-src 'self' 'unsafe-inline';
+                 img-src 'self' data: https:;">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <title>MoneyVerse — Earn More Every Day</title>
+
+  <style>
+    :root {
+      --blue:   #00f0ff;
+      --yellow: #ffd700;
+      --green:  #39ff14;
+      --pink:   #ff00aa;
+      --bg0:    #0a0022;
+      --bg1:    #1a0033;
+      --card-bg: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--bg0), var(--bg1));
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 100px 20px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(rgba(10,0,34,.8), rgba(26,0,51,.95));
+      z-index: 0;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .logo {
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--blue), var(--yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .frenzy {
+      font-size: clamp(1.8rem, 6vw, 3.2rem);
+      color: var(--yellow);
+      text-shadow: 0 0 40px var(--yellow);
+      margin: 14px 0;
+    }
+
+    .tagline { font-size: clamp(1rem, 3vw, 1.5rem); margin: 18px 0; color: #ddd; }
+
+    .phone-img {
+      display: block;
+      max-width: 280px;
+      width: 100%;
+      margin: 28px auto;
+      border: 12px solid #111;
+      border-radius: 42px;
+      box-shadow: 0 0 60px rgba(0,240,255,.55);
+      /* example.jpg – replace src with your actual phone mockup */
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 15px 44px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--pink), var(--yellow));
+      color: #000;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 14px;
+      box-shadow: 0 10px 35px rgba(255,0,170,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .cta:hover { transform: translateY(-3px); box-shadow: 0 16px 45px rgba(255,0,170,.6); }
+    .cta:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+
+    /* ── APPS SECTION ── */
+    .apps-section {
+      padding: 80px 20px;
+      background: rgba(0,0,0,.55);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      margin-bottom: 48px;
+      color: var(--yellow);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,240,255,.18);
+      border-radius: 14px;
+      padding: 14px 10px;
+      text-align: center;
+      transition: transform .35s, box-shadow .35s, border-color .35s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,240,255,.28);
+      border-color: var(--blue);
+    }
+
+    .app-card img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    .app-card h3 {
+      font-size: .9rem;
+      margin-bottom: 5px;
+      color: var(--yellow);
+      line-height: 1.3;
+    }
+
+    .app-card p {
+      font-size: .75rem;
+      color: #bbb;
+      margin-bottom: 10px;
+      min-height: 30px;
+      line-height: 1.4;
+    }
+
+    .rank-badge {
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 700;
+      color: #000;
+      background: var(--yellow);
+      border-radius: 20px;
+      padding: 2px 8px;
+      margin-bottom: 7px;
+    }
+
+    .play-btn {
+      display: inline-block;
+      padding: 7px 18px;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .play-btn:hover { opacity: .88; transform: scale(1.04); }
+    .play-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      color: #888;
+      font-size: .85rem;
+      line-height: 1.7;
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .app-card, .cta, .play-btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="logo">MONEYVERSE</h1>
+      <p class="frenzy">📈 Grow Your Earnings</p>
+      <p class="tagline">Smart Rewards, Bigger Gains</p>
+
+      <!--
+        Phone mockup image.
+        Replace the src below with your own file, e.g. src="img/example.jpg"
+        The picsum URL is a safe placeholder that loads without local assets.
+      -->
+      <img
+        src="img/ph.png"
+        alt="1xBet mobile app preview"
+        class="phone-img"
+        width="340"
+        height="500"
+        loading="eager"
+      >
+
+      <a href="#apps" class="cta">JOIN NOW &amp; WIN BIG</a>
+    </div>
+  </header>
+
+  <!-- Top 10 Betting Apps -->
+  <section class="apps-section" id="apps" aria-labelledby="apps-heading">
+    <h2 class="section-title" id="apps-heading">🔥 TOP 10 BETTING APPS &amp; GAMES 2026</h2>
+    <div class="apps-grid" id="appsGrid" role="list"></div>
+  </section>
+
+  <footer>
+    <p>© 2026 All Rights Reserved &bull; 18+ Play Responsibly - Access Only 🛡️ </p>
+    <p><small>⚠️Use at Your Own Risk. No Responsibility Accepted for Third-Party Content Services or User Actions — Please comply with your local laws and regulations⚠️</small></p>
+  </footer>
+
+  <script>
+    /**
+     * Top 10 betting apps data.
+     * img: replace each URL with your own file path, e.g. "img/example.jpg"
+     * Picsum photo IDs are used as safe, royalty-free placeholders.
+     */
+    const APPS = [
+      {
+        name: "1xBet",
+        desc: "🎯 1xBet Gaming & Sports Platform",
+        img: "img/bet.jpg",
+        url: "https://1x-bet-ind.com"   // ← replace with your real link
+      },
+      {
+        name: "Stake",
+        desc: "1000+ slots & table games",
+        img: "img/stake.png",
+        url: "https://stake.ac/?c=Stw3xNgR"
+      },
+      {
+        name: "4rabet",
+        desc: "Daily lucky spin rewards",
+        img: "img/4rabet.jpeg",
+        url: "https://cabinet.4rabetpartner.com/registration?ref=3141215"
+      },
+      {
+        name: "Parimatch",
+        desc: "IPL & T20 live betting",
+        img: "img/parimatch.jpeg",
+        url: "https://parimatch123.com"
+      },
+      {
+        name: "Melbet",
+        desc: "Premium roulette experience",
+        img: "img/melbet.jpeg",
+        url: "https://melbet-india.com.in/en-in/"
+      },
+      {
+        name: "Affinturo",
+        desc: "Play Indian card games online",
+        img: "img/affinturo.png",
+        url: "https://affinturo.com"
+      },
+      {
+        name: "Sikka",
+        desc: "Surveys, watch videos, daily tasks, referral bonuses",
+        img: "img/sikka.jpeg",
+        url: "https://play.google.com/store/apps/details?id=com.sikka.freemoney&utm_source=sikkaweb&utm_medium=websikka&utm_campaign=sikkaweborganic"
+      },
+      {
+        name: "InboxDollars",
+        desc: "24/7 non-stop live action",
+        img: "img/InboxDollars.jpg",
+        url: "https://www.inboxdollars.com"
+      },
+      {
+        name: "Mode Earn App",
+        desc: "Earn rewards through everyday activities!'em",
+        img: "img/modeeranapp.jpeg",
+        url: "https://play.google.com/store/apps/details?id=us.current.android"
+      },
+      {
+        name: "Bingo Clash",
+        desc: "Huge cash prizes daily",
+        img: "img/bingo.jpeg",
+        url: "https://play.google.com/store/apps/details?id=com.money.bingo.clash.win.real.cash.games"
+      }
+    ];
+
+    /**
+     * Safely escape user-facing text to prevent XSS.
+     * (Data here is static, but good practice for any dynamic data.)
+     */
+    function escapeHTML(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    const grid = document.getElementById('appsGrid');
+
+    APPS.forEach(function(app, index) {
+      const rank  = index + 1;
+      const eName = escapeHTML(app.name);
+      const eDesc = escapeHTML(app.desc);
+      const eImg  = escapeHTML(app.img);
+
+      const card = document.createElement('article');
+      card.className = 'app-card';
+      card.setAttribute('role', 'listitem');
+
+      const eUrl  = escapeHTML(app.url || '#');
+
+      card.innerHTML =
+        '<span class="rank-badge">#' + rank + ' TOP PICK</span>' +
+        '<img src="' + eImg + '" alt="' + eName + ' app icon" width="88" height="88" loading="lazy">' +
+        '<h3>' + eName + '</h3>' +
+        '<p>' + eDesc + '</p>' +
+        '<button class="play-btn" type="button" data-url="' + eUrl + '">PLAY NOW</button>';
+
+      grid.appendChild(card);
+    });
+
+    /* Event delegation — opens each app's URL in a new tab */
+    grid.addEventListener('click', function(e) {
+      const btn = e.target.closest('.play-btn');
+      if (!btn) return;
+      const url = btn.getAttribute('data-url');
+      if (url && url !== '#') {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }
+    });
+  </script>
+
+</body>
+</html>
