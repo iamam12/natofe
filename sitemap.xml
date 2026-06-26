@@ -5,7 +5,7 @@
 
   <!-- 1 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/</loc>
+    <loc>https://natofee.netlify.app/</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -13,7 +13,7 @@
 
   <!-- 2 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/gambling_game/</loc>
+    <loc>https://natofee.netlify.app/gambling/</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -21,7 +21,7 @@
 
   <!-- 3 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/mp3_mp4/</loc>
+    <loc>https://natofee.netlify.app/convert/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -29,7 +29,7 @@
 
   <!-- 4 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/social/</loc>
+    <loc>https://natofee.netlify.app/social/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -37,7 +37,7 @@
 
   <!-- 5 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/investment_stock/</loc>
+    <loc>https://natofee.netlify.app/investment/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -45,7 +45,7 @@
 
   <!-- 6 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/ai/</loc>
+    <loc>https://natofee.netlify.app/domain-hosting/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -53,7 +53,7 @@
 
   <!-- 7 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/robots.txt</loc>
+    <loc>https://natofee.netlify.app/ai/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -61,10 +61,53 @@
 
   <!-- 8 -->
   <url>
-    <loc>https://natofe.freeownloadd.workers.dev/sitemap.xml</loc>
+    <loc>https://natofee.netlify.app/about/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+        
+        <!-- 9 -->  
+    <url>
+    <loc>https://natofee.netlify.app/privacy-policy/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
+
+        <!-- 10 -->  
+    <url>
+    <loc>https://natofee.netlify.app/terms-conditions/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+        <!-- 11 -->  
+    <url>
+    <loc>https://natofee.netlify.app/contact-us/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+        
+        <!-- 12 -->  
+    <url>
+    <loc>https://natofee.netlify.app/sitemap-xml/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+        <!-- 13 -->  
+    <url>
+    <loc>https://natofee.netlify.app/robots.txt/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+        
 </urlset>
