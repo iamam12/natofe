@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://natofee.netlify.app/sitemap.xml
+Disallow: 
+Crawl-delay: 10
+Sitemap: https://natofee.netlify.app/
