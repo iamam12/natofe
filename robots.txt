@@ -19,7 +19,7 @@ Allow: /
 
 User-agent: *
 Allow: /sitemap.xml
-Allow: /sitemaps/
+Allow: /sitemap/
 Disallow: /
 
 Sitemap: https://natofee.netlify.app/sitemap.xml
