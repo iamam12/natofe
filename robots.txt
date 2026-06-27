@@ -1,4 +1,25 @@
+User-agent: Googlebot
+User-agent: Googlebot-Mobile
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Googlebot-News
+User-agent: Storebot-Google
+User-agent: Google-InspectionTool
+User-agent: GoogleOther
+User-agent: Google-Extended
+User-agent: AdsBot-Google
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: WhatsApp
+User-agent: Slackbot
+Allow: /
+
 User-agent: *
-Disallow: 
-Crawl-delay: 10
-Sitemap: https://natofee.netlify.app/
+Allow: /sitemap.xml
+Allow: /sitemaps/
+Disallow: /
+
+Sitemap: https://natofee.netlify.app/sitemap.xml
