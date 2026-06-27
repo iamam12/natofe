@@ -3,6 +3,7 @@ Disallow: /
 User-agent: Googlebot
 Disallow: /IntegrateWebsite_script_25_Jun_2026.txt/
 Disallow: /ads.txt
+Disallow: /LICENCE
 
 Allow: /
 Sitemap: https://natofee.netlify.app/
