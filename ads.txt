@@ -1,1 +1,3 @@
 google.com, pub-5390362986898578, DIRECT, f08c47fec0942fa0
+
+google-site-verification=3x4ZBx5t1ob53FjunNpVj511wygpmza7UaspdobyRAg
