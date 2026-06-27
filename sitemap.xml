@@ -89,22 +89,4 @@
     <priority>0.5</priority>
   </url>
 
-        
-        <!-- 12 -->  
-    <url>
-    <loc>https://natofee.netlify.app/sitemap-xml/</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-
-        <!-- 13 -->  
-    <url>
-    <loc>https://natofee.netlify.app/robots.txt/</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-        
 </urlset>
